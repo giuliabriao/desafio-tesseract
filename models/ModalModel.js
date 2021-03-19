@@ -1,25 +1,30 @@
 class ModalModel{
     constructor(){
-        this._name = "";
-        this._public_repos = "";
-        this._followers = "";
-        this._created_at = "";
+        this._login = "";
+        // this._name = "";
+        // this._public_repos = "";
+        // this._followers = "";
+        // this._created_at = "";
     };
 
-    get name() {
-        return this._name;
-    };
+    // get name() {
+    //     return this._name;
+    // };
 
-    get public_repos() {
-        return this._public_repos;
-    };
+    // get public_repos() {
+    //     return this._public_repos;
+    // };
 
-    get followers() {
-        return this._followers;
-    }
+    // get followers() {
+    //     return this._followers;
+    // }
 
-    get created_at() {
-        return this._created_at;
+    // get created_at() {
+    //     return this._created_at;
+    // }
+
+    get login(){
+        return this._login;
     }
 
     getUserModalData(login){
@@ -28,16 +33,13 @@ class ModalModel{
 
         let request = new XMLHttpRequest();
 
-        request.open("GET", url);
+        request.open("GET", url), false;
 
         request.addEventListener("load", () => {
             if(request.status == 200){
                 let response = JSON.parse(request.responseText);
 
-                this._name = response.name;
-                this._public_repos = response.public_repos;
-                this._followers = response.followers;
-                this._created_at = response.created_at;
+                this._login = response.login;
             }
             else{
                 throw "Sorry, an error ocurred, try again later.";

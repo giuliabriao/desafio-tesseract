@@ -1,17 +1,15 @@
 class UserView{
     constructor(userSetModel){
 
-        let $ = document.createElement.bind(document);
-
         let userView = "";
 
-        userSetModel.tesseractUser.forEach( (element) => {
+        userSetModel.tesseractMember.forEach( (element) => {
 
-            userView += `<div class="col-4 mb-2 mt-2">
-                            <p class="text-center m-0" >${element.login}</p>
-                            <img class="img-fluid mw-100" src="${element.avatar_url}">
+            userView += `<div class="col-4 mb-2 mt-2 justify-content-around">
+                            <p class="text-center m-0 member-login" >${element.login}</p>
+                            <img id="${element.login}" class="img-fluid mw-100 avatar-url" src="${element.avatar_url}" 
+                            onclick="userController.showModal(id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>`
-
         });
 
         this._users_html = userView;

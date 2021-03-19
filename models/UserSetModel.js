@@ -1,10 +1,10 @@
 class UserSetModel{
     constructor(){
-        this._tesseractUser = [];
+        this._tesseractMember = [];
     };
 
-    get tesseractUser(){
-        return this._tesseractUser;
+    get tesseractMember(){
+        return this._tesseractMember;
     };
 
     getUserData(){
@@ -23,7 +23,7 @@ class UserSetModel{
                     return new UserModel(user.login, user.avatar_url);
                 });
 
-                this._tesseractUser = users
+                this._tesseractMember = users
             }
         });
 
