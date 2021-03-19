@@ -3,10 +3,10 @@ class UserController{
         let userSetModel = new UserSetModel();
         userSetModel.getUserData();
 
-        let userView = new UserView();
-        userView.userOnScreen(userModel);
-    }
-}
+        let userView = new UserView(userSetModel);
+        userView.userOnScreen();
+    };
+};
 
 let userController = new UserController();
 

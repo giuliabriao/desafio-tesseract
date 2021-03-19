@@ -3,7 +3,7 @@ class UserSetModel{
         this._tesseractUser = [];
     };
 
-    get user(){
+    get tesseractUser(){
         return this._tesseractUser;
     };
 
@@ -13,7 +13,7 @@ class UserSetModel{
 
         let request = new XMLHttpRequest();
 
-        request.open("GET", url);
+        request.open("GET", url, false);
         
         request.addEventListener("load", () => {
             if(request.status == 200){
