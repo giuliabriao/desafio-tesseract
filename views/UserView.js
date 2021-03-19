@@ -7,7 +7,10 @@ class UserView{
 
         userSetModel.tesseractUser.forEach( (element) => {
 
-            userView += `<div><p>${element.login}</p></div><div><img src="${element.avatar_url}"></div>`
+            userView += `<div class="col-4 mb-2 mt-2">
+                            <p class="text-center m-0" >${element.login}</p>
+                            <img class="img-fluid mw-100" src="${element.avatar_url}">
+                        </div>`
 
         });
 
