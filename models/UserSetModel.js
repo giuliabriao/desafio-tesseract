@@ -9,7 +9,7 @@ class UserSetModel{
 
     getUserData(){
 
-        let url = 'https://api.github.com/orgs/grupotesseract/public_members'
+        let url = 'https://api.github.com/orgs/grupotesseract/public_members';
 
         let request = new XMLHttpRequest();
 
@@ -23,7 +23,7 @@ class UserSetModel{
                     return new UserModel(user.login, user.avatar_url);
                 });
 
-                this._tesseractMember = users
+                this._tesseractMember = users;
             }
         });
 

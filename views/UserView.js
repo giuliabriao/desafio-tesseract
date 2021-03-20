@@ -3,7 +3,7 @@ class UserView{
 
         let userView = "";
 
-        userSetModel.tesseractMember.forEach( (element) => {
+        userSetModel.tesseractMember.forEach( (element) => { //Esse forEach cria um codigo html com as informações de cada usuário
 
             userView += `<div class="col-4 mb-2 mt-2 justify-content-around">
                             <p class="text-center m-0 member-login" >${element.login}</p>
@@ -15,7 +15,7 @@ class UserView{
         this._users_html = userView;
     };
 
-    userOnScreen(){
+    userOnScreen(){ //Essa função faz aparecer na tela
         let userInfoDiv = document.querySelector(".infoDivUser");
         userInfoDiv.innerHTML = this._users_html;
     };

@@ -12,6 +12,6 @@ class UserController{
      modalModel.getUserModalData(loginUser);
 
      let modalView = new ModalView();
-     modalView.modal(modalModel.login);
-    }
+     modalView.modal(modalModel.userInfo);
+    };
 };
