@@ -14,13 +14,12 @@
     width: 25%;
 }
 
-/* .fonte-padrao{
+.fonte-padrao{
+    font-family: 'Fjalla One', sans-serif;
+}
 
-} */
-
-.avatar-url{
-    max-width: 100%;
-    max-height: 100%;
+.avatar{
+    width: 200px;
 }
 
 .footer{

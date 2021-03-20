@@ -6,22 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Membros Tesseract</title>
 </head>
 <body>
 
     <header class="header text-center">
-        <div><img class="cube-tesseract img-fluid" src="images/logo-cube-tesseract.JPG"></div>
-        <div><img class="logo-tesseract img-fluid" src="images/logo-tesseract.JPG"></div>
+        <div>
+          <a href="https://grupotesseract.com.br/">
+            <img class="cube-tesseract img-fluid" src="images/logo-cube-tesseract.JPG">
+          </a>
+        </div>
+        <div>
+          <a href="https://grupotesseract.com.br/">
+            <img class="logo-tesseract img-fluid" src="images/logo-tesseract.JPG">
+          </a>
+          </div>
     </header>
 
     <main class="main container">
-        <div class="row infoDivUser d-flex"></div>
+        <div class="row infoDivUser d-flex justify-content-center"></div>
 
             <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-md">
               <div class="modal-content mt-0 bg-dark border-3 ">
               <div class="modal-content mt-0 bg-dark border ">
                 <div class="d-flex justify-content-end">
@@ -29,11 +40,11 @@
                 </div> 
                   <div class="d-flex justify-content-around infos-content-js mb-3">
                     <div class="">
-                      <p class="name p-2 text-light"></p>
+                      <p class="name mb-2 fs-4 text-light fonte-padrao"></p>
                       <img class="avatar-url-modal img-fluid" src="">
-                      <p class="quant-repos p-2 text-light fonte-padrao"></p>
-                      <p class="followers p-2 text-light fonte-padrao"></p>
-                      <p class="created-at p-2 text-light fonte-padrao"></p>
+                      <p class="quant-repos text-center mt-2 text-light fonte-padrao"></p>
+                      <p class="followers text-center text-light fonte-padrao"></p>
+                      <p class="created-at text-center mt-4 text-light fonte-padrao"></p>
                     </div>
                   </div>
               </div>
@@ -42,11 +53,11 @@
           </div>
     </main>
 
-    <!-- <footer class="footer text-center bg-dark mt-auto py-3">
+    <footer class="footer text-center bg-dark py-5 text-light mt-auto">
         <div class="container">
-            <p class="">A project made by <a href="https://github.com/giuliabriao">Giulia Briao</a></p>
+            <p class="fonte-padrao">A project made by <a class="text-light fonte-padrao" href="https://github.com/giuliabriao">Giulia Briao</a></p>
       </div>
-    </footer> -->
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
