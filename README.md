@@ -5,7 +5,7 @@
 ###  Requisitos minimos do projeto
 - [x] Lista com os atuais membros no Github, com login e foto
 - [x] Campo de filtro para filtrar os membros (por login) 
-- [x] Ao clicar em um membro, exibir informações daquela pessoa:
+- [x] Ao clicar em um membro, exibir informações daquela pessoa:<br>
       -> Nome;<br>
       -> Quantidade de repositórios;<br>
       -> Quantidade de seguidores;<br>
