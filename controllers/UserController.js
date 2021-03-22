@@ -23,6 +23,7 @@ class UserController{
 
     searchMembers(inputValue){
 
+        let searchButton = document.querySelector('#searchButton');
         let searchedLogin = inputValue.toLowerCase();
         let members = this.userSetModel.setUsers;
 
@@ -34,11 +35,11 @@ class UserController{
         });
 
         //Esse if faz aparecer o modal de erro caso não localize o usuário na busca.
-        if(searchedMembers.length == 0 ){
-            let modalError = document.getElementById('modalError');
-            modalError.show();
+        if(searchedMembers.length == 0){
+            searchButton.setAttribute("data-bs-toggle","modal");
+            searchButton.setAttribute("data-bs-target","#modalError"); 
             return;
-        };
+        }
 
         let model = new UserSetModel();
         model.setUsers = searchedMembers;
@@ -46,4 +47,9 @@ class UserController{
         let userView = new UserView(model);
         userView.userOnScreen();
     };
+
+    removingAttributesFromSearchButton(){
+        searchButton.removeAttribute("data-bs-toggle","modal");
+        searchButton.removeAttribute("data-bs-target","#modalError");
+    }
 };

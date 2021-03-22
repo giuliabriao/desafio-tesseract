@@ -32,7 +32,7 @@
       <!-- Campos de busca -->
         <div class="d-flex justify-content-center mb-4">
           <input class="input-group w-25 searchInput fonte-padrao" type="text" id="searchInput" placeholder="Digite um login válido...">
-          <button class="btn btn-outline-secondary fonte-padrao" id="searchButton" data-bs-toggle="modal" data-bs-target="#modalError">Buscar!</button>
+          <button class="btn btn-outline-secondary fonte-padrao" id="searchButton">Buscar!</button>
           <button class="btn btn-outline-secondary p-1 ms-2 fonte-padrao" id="showAllButton">Mostrar todos</button>
         </div>
         <div class="row infoDivUser d-flex justify-content-center"></div>
@@ -65,13 +65,13 @@
               <div class="modal-content bg-dark">
                 <div class="modal-header">
                   <h5 class="modal-title fs-2 text-light fonte-padrao">Oops!</h5>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="closeErrorButton btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <p class="fonte-padrao text-light">Login não encontrado, tente novamente!</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-light fonte-padrao" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="closeErrorButton btn btn-light fonte-padrao" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
 
     <script>
 
-        //Fazendo aparecer os membros Tesseract na tela
+        //Fazendo aparecer os membros Tesseract na tela.
         let userController = new UserController();
 
         let main = document.querySelector(".main");
@@ -112,14 +112,20 @@
             userController.showUsers();
         });
         
-        //Buscando usuários ao clicar no botão
+        //Buscando usuários ao clicar no botão.
         let inputLogin = document.querySelector("#searchInput");
-
         let searchButton = document.querySelector("#searchButton")
         searchButton.addEventListener("click", () => {
             userController.searchMembers(inputLogin.value);
         });
 
+        //Removendo as propriedades do modal de erro da tag button a cada clique em Close e no X para evitar bugs.
+        let closeErrorButton = document.querySelector(".closeErrorButton");
+        closeErrorButton.addEventListener("click", () => {
+            userController.removingAttributesFromSearchButton();
+        });
+
+        //Adicionando evento ao botão de Mostrar todos.
         let showAllButton = document.querySelector("#showAllButton");
         showAllButton.addEventListener("click", () => {
           userController.showUsers();
