@@ -1,5 +1,6 @@
 # Desafio do Grupo Tesseract para vaga de Front-End Jr
-Este desafio consiste em uma listagem dos membros do Tesseract e exibição de
+
+## Este desafio consiste em uma listagem dos membros do Tesseract e exibição de
 detalhes sobre a pessoa selecionada.
 
 ###  Requisitos minimos do projeto
@@ -12,8 +13,7 @@ detalhes sobre a pessoa selecionada.
       -> Data em que a pessoa entrou no GitHub.
 
 
-### Os membros do Tesseract, assim como suas informações, devem ser carregados de
-modo dinâmico pela api do github:
+### Os membros do Tesseract, assim como suas informações, devem ser carregados de modo dinâmico pela api do github:
 - [x] https://api.github.com/orgs/grupotesseract/public_members
 - [x] https://api.github.com/users/{user}
 
