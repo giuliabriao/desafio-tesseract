@@ -10,11 +10,11 @@ class ModalView{ //Aqui estou puxando apenas as informações do usuário que eu
         this.createdAt = $('.created-at');
     };
 
-    modal(userInfo){
+    modalInfos(userInfo){
 
         let createdAt = userInfo.created_at;
 
-            //Aqui tratando da data que veio formatada como eu não gostaria.
+            //Formatando a data.
         let data = createdAt.split("T")[0];
         let [yyyy, mm, dd] = data.split("-");
         var correctDate = `${dd}-${mm}-${yyyy}`;

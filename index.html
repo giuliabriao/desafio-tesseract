@@ -28,9 +28,10 @@
     </header>
 
     <main class="main container">
-        <div class="d-flex justify-content-center">
-          <input class="" type="text" id="searchInput" placeholder="Digite um login válido...">
-          <button id="searchButton">Buscar!</button>
+        <div class="d-flex justify-content-center mb-4">
+          <input class="input-group w-25 searchInput fonte-padrao" type="text" id="searchInput" placeholder="Digite um login válido...">
+          <button class="btn btn-outline-secondary fonte-padrao" id="searchButton">Buscar!</button>
+          <button class="btn btn-outline-secondary p-1 ms-2 fonte-padrao" id="showAllButton">Mostrar todos</button>
         </div>
         <div class="row infoDivUser d-flex justify-content-center"></div>
 
@@ -57,7 +58,7 @@
           </div>
     </main>
 
-    <footer class="footer text-center bg-dark py-5 text-light mt-auto">
+    <footer class="footer text-center bg-dark py-3 text-light position-absolute top-100 start-50 translate-middle w-100">
         <div class="container">
             <p class="fonte-padrao">A project made by <a class="text-light fonte-padrao" href="https://github.com/giuliabriao">Giulia Briao</a></p>
       </div>
@@ -87,15 +88,20 @@
         let main = document.querySelector(".main");
 
         window.addEventListener("load", () => {
-            userController.showUser();
+            userController.showUsers();
         });
         
         //Buscando usuários ao clicar no botão
         let inputLogin = document.querySelector("#searchInput");
 
-        let button = document.querySelector("#searchButton")
-        button.addEventListener("click", () => {
+        let searchButton = document.querySelector("#searchButton")
+        searchButton.addEventListener("click", () => {
             userController.searchMembers(inputLogin.value);
+        });
+        
+        let showAllButton = document.querySelector("#showAllButton");
+        showAllButton.addEventListener("click", () => {
+          userController.showUsers();
         });
 
     </script>

@@ -2,24 +2,29 @@
     background-color: black;
 }
 
-/* body{
-    background-color: #b3b3b3;
-} */
-
 .cube-tesseract{
     width: 5%;
 }
 
 .logo-tesseract{
-    width: 25%;
+    width: 20%;
 }
 
 .fonte-padrao{
     font-family: 'Fjalla One', sans-serif;
 }
 
+.searchInput::-webkit-input-placeholder{
+    font-family: 'Fjalla One', sans-serif;
+}
+
 .avatar{
-    width: 200px;
+    width: 180px;
+}
+
+.avatar:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
 }
 
 .footer{

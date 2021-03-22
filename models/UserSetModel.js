@@ -1,14 +1,15 @@
 class UserSetModel{
     constructor(){
-        this._tesseractMember = [];
+        this._setUsers = [];
     };
 
-    get tesseractMember(){
-        return this._tesseractMember;
+    get setUsers(){
+        return this._setUsers;
     };
 
-    set tesseractMember(members){
-        this._tesseractMember = members;
+    //Esse setter serve para quando precisarmos dele no filtro para o campo de busca lá no controller.
+    set setUsers(members){
+        this._setUsers = members;
     }
 
     getUserData(){
@@ -27,7 +28,10 @@ class UserSetModel{
                     return new UserModel(user.login, user.avatar_url);
                 });
 
-                this._tesseractMember = users;
+                this._setUsers = users;
+
+            }else{
+                throw "Sorry, an error ocurred, try again later.";
             }
         });
 
