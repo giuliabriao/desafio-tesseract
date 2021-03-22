@@ -1,7 +1,6 @@
 # Desafio do Grupo Tesseract para vaga de Front-End Jr
 
-## Este desafio consiste em uma listagem dos membros do Tesseract e exibição de
-detalhes sobre a pessoa selecionada.
+## Este desafio consiste em uma listagem dos membros do Tesseract e exibição de detalhes sobre a pessoa selecionada.
 
 ###  Requisitos minimos do projeto
 - [x] Lista com os atuais membros no Github, com login e foto
