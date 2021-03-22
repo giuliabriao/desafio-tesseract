@@ -33,9 +33,10 @@ class UserController{
             return member.login.toLowerCase().includes(searchedLogin);
         });
 
-        //Esse if faz um alert caso não localize o usuário na busca.
+        //Esse if faz aparecer o modal de erro caso não localize o usuário na busca.
         if(searchedMembers.length == 0 ){
-            alert("Ops, esse login não foi encontrado, tente novamente!");
+            let modalError = document.getElementById('modalError');
+            modalError.show();
             return;
         };
 

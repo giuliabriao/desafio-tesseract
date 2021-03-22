@@ -30,13 +30,13 @@
     <main class="main container">
         <div class="d-flex justify-content-center mb-4">
           <input class="input-group w-25 searchInput fonte-padrao" type="text" id="searchInput" placeholder="Digite um login válido...">
-          <button class="btn btn-outline-secondary fonte-padrao" id="searchButton">Buscar!</button>
+          <button class="btn btn-outline-secondary fonte-padrao" id="searchButton" data-bs-toggle="modal" data-bs-target="#modalError">Buscar!</button>
           <button class="btn btn-outline-secondary p-1 ms-2 fonte-padrao" id="showAllButton">Mostrar todos</button>
         </div>
         <div class="row infoDivUser d-flex justify-content-center"></div>
 
             <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalInfos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
               <div class="modal-content mt-0 bg-dark border-3 ">
               <div class="modal-content mt-0 bg-dark border ">
@@ -53,6 +53,24 @@
                     </div>
                   </div>
               </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Modal de erro-->
+          <div class="modal fade" tabindex="-1" id="modalError" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-2 text-light fonte-padrao">Oops!</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="fonte-padrao text-light">Login não encontrado, tente novamente!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light fonte-padrao" data-bs-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
           </div>
@@ -98,7 +116,7 @@
         searchButton.addEventListener("click", () => {
             userController.searchMembers(inputLogin.value);
         });
-        
+
         let showAllButton = document.querySelector("#showAllButton");
         showAllButton.addEventListener("click", () => {
           userController.showUsers();
