@@ -7,6 +7,10 @@ class UserSetModel{
         return this._tesseractMember;
     };
 
+    set tesseractMember(members){
+        this._tesseractMember = members;
+    }
+
     getUserData(){
 
         let url = 'https://api.github.com/orgs/grupotesseract/public_members';

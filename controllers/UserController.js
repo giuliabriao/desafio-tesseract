@@ -1,17 +1,38 @@
 class UserController{
-    showUser(){
-        let userSetModel = new UserSetModel();
-        userSetModel.getUserData();
+    constructor(){
 
-        let userView = new UserView(userSetModel);
+        this.userSetModel = new UserSetModel();
+
+        this.modalModel = new ModalModel();
+    };
+
+    showUser(){
+        this.userSetModel.getUserData();
+
+        let userView = new UserView(this.userSetModel);
         userView.userOnScreen();
     };
 
     showModal(loginUser){
-     let modalModel = new ModalModel();
-     modalModel.getUserModalData(loginUser);
+     this.modalModel.getUserModalData(loginUser);
 
      let modalView = new ModalView();
-     modalView.modal(modalModel.userInfo);
+     modalView.modal(this.modalModel.userInfo);
+    };
+
+    searchMembers(inputValue){
+
+        let members = this.userSetModel.tesseractMember;
+
+        let searchedMembers = members.filter( (member) => {
+            return member._login == inputValue;
+        });
+
+        let model = new UserSetModel();
+        model.tesseractMember = searchedMembers;
+
+
+        let userView = new UserView(model);
+        userView.userOnScreen();
     };
 };

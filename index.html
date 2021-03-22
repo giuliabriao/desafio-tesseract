@@ -20,7 +20,7 @@
             <img class="cube-tesseract img-fluid" src="images/logo-cube-tesseract.JPG">
           </a>
         </div>
-        <div>
+        <div class="mb-4">
           <a href="https://grupotesseract.com.br/">
             <img class="logo-tesseract img-fluid" src="images/logo-tesseract.JPG">
           </a>
@@ -28,6 +28,10 @@
     </header>
 
     <main class="main container">
+        <div class="d-flex justify-content-center">
+          <input class="" type="text" id="searchInput" placeholder="Digite um login válido...">
+          <button id="searchButton">Buscar!</button>
+        </div>
         <div class="row infoDivUser d-flex justify-content-center"></div>
 
             <!-- Modal -->
@@ -76,13 +80,22 @@
     <script src="controllers/UserController.js"></script>
 
     <script>
-        
+
+        //Fazendo aparecer os membros Tesseract na tela
         let userController = new UserController();
 
         let main = document.querySelector(".main");
 
         window.addEventListener("load", () => {
             userController.showUser();
+        });
+        
+        //Buscando usuários ao clicar no botão
+        let inputLogin = document.querySelector("#searchInput");
+
+        let button = document.querySelector("#searchButton")
+        button.addEventListener("click", () => {
+            userController.searchMembers(inputLogin.value);
         });
 
     </script>
