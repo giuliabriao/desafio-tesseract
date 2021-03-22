@@ -7,10 +7,10 @@ detalhes sobre a pessoa selecionada.
 - [x] Lista com os atuais membros no Github, com login e foto
 - [x] Campo de filtro para filtrar os membros (por login) 
 - [x] Ao clicar em um membro, exibir informações daquela pessoa:
--- [x] Nome;
--- [x] Quantidade de repositórios;
--- [x] Quantidade de seguidores;
--- [x] Data em que a pessoa entrou no GitHub.
+      -> Nome;
+      -> Quantidade de repositórios;
+      -> Quantidade de seguidores;
+      -> Data em que a pessoa entrou no GitHub.
 
 
 ### Os membros do Tesseract, assim como suas informações, devem ser carregados de
