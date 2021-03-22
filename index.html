@@ -65,13 +65,13 @@
               <div class="modal-content bg-dark">
                 <div class="modal-header">
                   <h5 class="modal-title fs-2 text-light fonte-padrao">Oops!</h5>
-                  <button type="button" class="closeErrorButton btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button id="closeXButton" type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <p class="fonte-padrao msg-login text-light">Login não encontrado, tente novamente!</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="closeErrorButton btn btn-light fonte-padrao" data-bs-dismiss="modal">Close</button>
+                  <button id="closeErrorButton" type="button" class="btn btn-light fonte-padrao" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -114,14 +114,19 @@
         
         //Buscando usuários ao clicar no botão.
         let inputLogin = document.querySelector("#searchInput");
-        let searchButton = document.querySelector("#searchButton")
+        let searchButton = document.querySelector("#searchButton");
         searchButton.addEventListener("click", () => {
             userController.searchMembers(inputLogin.value);
         });
 
         //Removendo as propriedades do modal de erro da tag button a cada clique em Close e no X para evitar bugs.
-        let closeErrorButton = document.querySelector(".closeErrorButton");
+        let closeErrorButton = document.querySelector("#closeErrorButton");
         closeErrorButton.addEventListener("click", () => {
+            userController.removingAttributesFromSearchButton();
+        });
+
+        let closeXButton = document.querySelector("#closeXButton");
+        closeXButton.addEventListener("click", () => {
             userController.removingAttributesFromSearchButton();
         });
 
