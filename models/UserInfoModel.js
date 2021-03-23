@@ -1,4 +1,4 @@
-class ModalModel{
+class UserInfoModel{
     constructor(){
         this._userInfo = {};
     };
@@ -7,7 +7,7 @@ class ModalModel{
         return this._userInfo;
     }
 
-    getUserModalData(login){
+    getUserInfo(login){
 
         let url = `https://api.github.com/users/${login}`
 
@@ -19,7 +19,7 @@ class ModalModel{
             if(request.status == 200){
                 let response = JSON.parse(request.responseText);
 
-                this._userInfo = response; //Aqui eu puxo o objeto completo para só trata-lo na View.
+                this._userInfo = response;
             }
             else{
                 throw "Sorry, an error ocurred, try again later.";

@@ -1,4 +1,4 @@
-class ModalView{ //Aqui estou puxando apenas as informações do usuário que eu quero.
+class UserInfoModalView{
     constructor(){
 
         let $ = document.querySelector.bind(document);
@@ -14,15 +14,17 @@ class ModalView{ //Aqui estou puxando apenas as informações do usuário que eu
 
         let createdAt = userInfo.created_at;
 
-            //Formatando a data.
+        //Formatando a data.
         let data = createdAt.split("T")[0];
         let [yyyy, mm, dd] = data.split("-");
-        var correctDate = `${dd}-${mm}-${yyyy}`;
+        var formatedDate = `${dd}/${mm}/${yyyy}`;
 
         this.name.textContent = `Essa pessoa se chama ${userInfo.name}`;
         this.avatarUrl.setAttribute("src", userInfo.avatar_url);
         this.quantRepos.textContent = `Ela possui ${userInfo.public_repos} repositórios`;
         this.followers.textContent = `e tem ${userInfo.followers} seguidores.`;
-        this.createdAt.textContent = `Sua conta foi criada em ${correctDate}.`
+        this.createdAt.textContent = `Sua conta foi criada em ${formatedDate}.`
     };
+
+    
 }

@@ -1,18 +1,17 @@
 class UserSetModel{
     constructor(){
-        this._setUsers = [];
+        this._users = [];
     };
 
-    get setUsers(){
-        return this._setUsers;
+    get users(){
+        return this._users;
     };
 
-    //Esse setter serve para quando precisarmos dele no filtro para o campo de busca lá no controller.
-    set setUsers(members){
-        this._setUsers = members;
+    set users(users){
+        this._users = users;
     }
 
-    getUserData(){
+    getAllUsers(){
 
         let url = 'https://api.github.com/orgs/grupotesseract/public_members';
 
@@ -24,12 +23,7 @@ class UserSetModel{
             if(request.status == 200){
                 let usersResponse = JSON.parse(request.responseText);
 
-                let users = usersResponse.map((user) => {
-                    return new UserModel(user.login, user.avatar_url);
-                });
-
-                this._setUsers = users;
-
+                this.users = usersResponse;
             }else{
                 throw "Sorry, an error ocurred, try again later.";
             }
