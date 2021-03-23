@@ -25,7 +25,7 @@ git clone https://github.com/giuliabriao/desafio-tesseract.git
 ```
 Agora, abra o arquivo ```index.html``` para consultar e pesquisar as informações dos membros Tesseract.
 
-### 📌 A arquitetura do projeto
+### 📌 O padrão do projeto
 
 
 Utilizei o padrão **MVC** (Model-View-Controller) neste desafio, tanto pela facilidade de organização e manutenção que esse padrão oferece, quanto para treinar e me aprimorar em criar aplicações padronizadas.
