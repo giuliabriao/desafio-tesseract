@@ -17,7 +17,7 @@ class UserController {
     showUserInfo(userLogin) {
         this.userInfoModel.getUserInfo(userLogin);
 
-        this.userInfoModalView.modalInfos(this.userInfoModel.userInfo);
+        this.userInfoModalView.show(this.userInfoModel.userInfo);
     };
 
     searchUsers(login) {
@@ -30,7 +30,7 @@ class UserController {
 
         if (searchedMembers.length == 0) {
 
-            this.view.showNotFoundModal();
+            ModalView.showModal("#userNotFoundModal");
 
             this.showAllUsers();
 
