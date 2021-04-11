@@ -10,7 +10,7 @@ class UserInfoModalView{
         this.createdAt = $('.created-at');
     };
 
-    modalInfos(userInfo){
+    show(userInfo){
 
         let createdAt = userInfo.created_at;
 
@@ -24,7 +24,8 @@ class UserInfoModalView{
         this.quantRepos.textContent = `Ela possui ${userInfo.public_repos} repositórios`;
         this.followers.textContent = `e tem ${userInfo.followers} seguidores.`;
         this.createdAt.textContent = `Sua conta foi criada em ${formatedDate}.`
-    };
 
-    
-}
+        ModalView.showModal("#userInfoModal");
+    };
+};
+
